@@ -1,0 +1,177 @@
+{% load static %}
+{% load socialaccount %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+
+
+<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- Include Google's official CSS for the sign-in button -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+    <body class="main-body-signin">
+
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/logo.jpg' %}" alt="Logo" class="logo-image">
+                </a>
+            </div>
+            
+            <div class="navbar-links">
+
+                <a href="{% url 'home' %}">
+                <div class="navbar-icons-signin">
+                    <div class="home-icon icon-home">
+                        <i class="material-icons icon-home" style="font-size: 1.8rem;">home</i>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </nav>
+
+            {% comment %} <div class="otp-main" style="margin-top:100px; color:black; background-color:yellow;">
+                <p>Sign Up</p>
+                <hr>
+                <p>Verify Email</p>
+                <div class="otp-content">
+                    <p>Enter the One Time Password sent to your Email</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <label for="otp1">OTP:</label><br>
+                        <input type="text" id="otp1" name="otp1" maxlength="1" size="1" pattern="[0-9]" required>
+                        <input type="text" id="otp2" name="otp2" maxlength="1" size="1" pattern="[0-9]" required>
+                        <input type="text" id="otp3" name="otp3" maxlength="1" size="1" pattern="[0-9]" required>
+                        <input type="text" id="otp4" name="otp4" maxlength="1" size="1" pattern="[0-9]" required><br>
+                        <button type="submit">Verify OTP</button>
+                    </form>
+                </div>
+            </div> {% endcomment %}
+
+            
+            <div class="otp-main">
+                <p>Sign Up</p>
+                <hr>
+                <p class="verify-otp">Verify Email</p>
+                <div class="otp-content">
+                    <p>Enter the One Time Password sent to your Email</p>
+                    <form id="otpForm" method="post">
+                        {% csrf_token %}
+                        <label for="otp1"></label><br>
+                        <input type="text" id="otp1" name="otp1" maxlength="1" size="1" pattern="[0-9]" required>
+                        <input type="text" id="otp2" name="otp2" maxlength="1" size="1" pattern="[0-9]" required>
+                        <input type="text" id="otp3" name="otp3" maxlength="1" size="1" pattern="[0-9]" required>
+                        <input type="text" id="otp4" name="otp4" maxlength="1" size="1" pattern="[0-9]" required><br>
+                        <div id="otpStatus"></div> <!-- Display area for OTP status -->
+                        <button type="button" id="verifyButton">Continue</button>
+                    </form>
+                </div>
+            </div>
+            
+
+            {% comment %} 
+            <script>
+                document.getElementById('verifyButton').addEventListener('click', function() {
+                    var otpEntered = document.getElementById('otp1').value +
+                                     document.getElementById('otp2').value +
+                                     document.getElementById('otp3').value +
+                                     document.getElementById('otp4').value;
+            
+                    var otpStatus = document.getElementById('otpStatus');
+                    otpStatus.innerHTML = '<span style="color:blue;">Verifying OTP...</span>';
+            
+                    // Simulate OTP verification (replace with actual AJAX call)
+                    setTimeout(function() {
+                        var otpSaved = "{{ request.session.otp }}"; // Replace with actual OTP from session
+            
+                        if (otpEntered === otpSaved) {
+                            otpStatus.innerHTML = '<span style="color:green;"><i class="fas fa-check"></i> Verified</span>';
+                            // Perform necessary actions upon successful verification (e.g., enable form submission)
+                            document.getElementById('otpForm').submit();
+            
+                            // Clear the status message after 3 seconds
+                            setTimeout(function() {
+                                otpStatus.innerHTML = ''; // Clear the status message
+                            }, 3000);
+                        } else {
+                            otpStatus.innerHTML = '<span style="color:red;"><i class="fas fa-times"></i> Oops! You have entered the wrong OTP. Please try again.</span>';
+            
+                            // Clear the error message after 3 seconds
+                            setTimeout(function() {
+                                otpStatus.innerHTML = ''; // Clear the error message
+                            }, 3000);
+                        }
+                    }, 2000); // Simulate OTP verification delay
+                });
+            </script>
+            
+             {% endcomment %}
+
+
+             <style>
+                /* Define keyframes for loading animation */
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            
+                /* Styling for loading spinner */
+                .loader {
+                    border: 4px solid rgba(0, 0, 0, 0.1);
+                    border-top: 4px solid black;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    animation: spin 1s linear infinite;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            </style>
+            <script>
+                document.getElementById('verifyButton').addEventListener('click', function() {
+                    var otpEntered = document.getElementById('otp1').value +
+                                     document.getElementById('otp2').value +
+                                     document.getElementById('otp3').value +
+                                     document.getElementById('otp4').value;
+            
+                    var otpStatus = document.getElementById('otpStatus');
+                    otpStatus.innerHTML = '<span style="color:blue;">Verifying OTP... <span class="loader"></span></span>';
+            
+                    // Simulate OTP verification (replace with actual AJAX call)
+                    setTimeout(function() {
+                        var otpSaved = "{{ request.session.otp }}"; // Replace with actual OTP from session
+            
+                        if (otpEntered === otpSaved) {
+                            otpStatus.innerHTML = '<span style="color:green;"><i class="fas fa-check"></i> Verified</span>';
+                            // Perform necessary actions upon successful verification (e.g., enable form submission)
+                            document.getElementById('otpForm').submit();
+            
+                            // Clear the status message after 3 seconds
+                            setTimeout(function() {
+                                otpStatus.innerHTML = ''; // Clear the status message
+                            }, 3000);
+                        } else {
+                            otpStatus.innerHTML = '<span style="color:red;"><i class="fas fa-times"></i> Oops! You have entered the wrong OTP. Please try again.</span>';
+            
+                            // Clear the error message after 3 seconds
+                            setTimeout(function() {
+                                otpStatus.innerHTML = ''; // Clear the error message
+                            }, 3000);
+                        }
+                    }, 2000); // Simulate OTP verification delay
+                });
+            </script>
+            
+
+            
+
+    </body> 
+

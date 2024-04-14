@@ -1,0 +1,31 @@
+[33ma07c33d[m[33m ([m[1;36mHEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to a07c33d
+[33m692bbbf[m HEAD@{1}: rebase (pick): Update
+[33m3f97d3c[m HEAD@{2}: rebase (pick): UODATESS
+[33m60309b2[m HEAD@{3}: rebase (pick): UPDATE
+[33m7bb151f[m HEAD@{4}: rebase (pick): Update
+[33meeb7e39[m HEAD@{5}: rebase (pick): groupsearchandlist page created
+[33m3c828fc[m HEAD@{6}: rebase (pick): Pushed feeds and group create page with a css and my photo for sample
+[33m6703bab[m HEAD@{7}: rebase (start): checkout HEAD~20
+[33ma07c33d[m[33m ([m[1;36mHEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{8}: rebase (finish): returning to refs/heads/main
+[33ma07c33d[m[33m ([m[1;36mHEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{9}: rebase (pick): UPDATE
+[33mdb4cc00[m HEAD@{10}: rebase (pick): UPDATE
+[33md729fa8[m HEAD@{11}: rebase (pick): feeds page designing
+[33m6b158d0[m HEAD@{12}: rebase (pick): FULL
+[33mf257e4f[m HEAD@{13}: rebase (pick): FULL
+[33m125ccbb[m HEAD@{14}: rebase (pick): FULL
+[33ma5c35b2[m HEAD@{15}: rebase (pick): FULL
+[33m84dfc43[m HEAD@{16}: rebase (pick): FULL
+[33m0acd977[m HEAD@{17}: rebase (pick): OTP
+[33maf4a625[m HEAD@{18}: rebase (pick): added venv to gitignore
+[33m1e49e3e[m HEAD@{19}: rebase (start): checkout HEAD~15
+[33m288adcd[m HEAD@{20}: rebase (finish): returning to refs/heads/main
+[33m288adcd[m HEAD@{21}: rebase (start): checkout HEAD~8
+[33m288adcd[m HEAD@{22}: rebase (finish): returning to refs/heads/main
+[33m288adcd[m HEAD@{23}: rebase (pick): UPDATE
+[33m662bbc3[m HEAD@{24}: rebase (pick): UPDATE
+[33m42f4852[m HEAD@{25}: rebase (pick): feeds page designing
+[33ma597816[m HEAD@{26}: rebase (start): checkout HEAD~8
+[33mf1d3845[m HEAD@{27}: commit: UPDATE
+[33me397393[m HEAD@{28}: commit: UPDATE
+[33mcf9e141[m HEAD@{29}: pull: Merge made by the 'ort' strategy.
+[33ma597816[m HEAD@{30}: commit: FULL

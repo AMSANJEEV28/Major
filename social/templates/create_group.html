@@ -1,0 +1,66 @@
+{% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+
+
+
+
+<div class="creategroup-popup creategroup-main">
+
+    <h2>Create Group</h2>
+
+    <div class="creategroup-coverimg">
+        <img>
+    <div>
+
+    <div class="form">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="{{ form.name.id_for_label }}">Group Name:</label>
+            {{ form.name }}
+            <label for="{{ form.description.id_for_label }}">Group Description:</label>
+            {{ form.description }}
+            <label for="id_tags">Tags (separated by commas):</label>
+            <input type="text" id="id_tags" name="tags">
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br>
+    <p style="margin-top: 20px;">
+        <a href="{% url 'social:search_group' %}"><button>Search Groups</button></a>
+        {% if group_id %}
+            <a href="{% url 'social:group_detail' group_id=group_id %}"><button>View Created Group</button></a>
+        {% endif %}
+    
+    </p>
